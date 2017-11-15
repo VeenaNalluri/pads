@@ -1,0 +1,76 @@
+2017-11-09T00:37:27.031Z - error: [gme:server:worker:simpleworker:pid_440:WorkerFunctions] importSelectionFromFile failed with error Error: given package contains a full project and not a model
+    at C:\Users\Purboday Ghosh\node_modules\webgme-engine\src\server\worker\workerrequests.js:918:31
+    at _fulfilled (C:\Users\Purboday Ghosh\node_modules\q\q.js:854:54)
+    at self.promiseDispatch.done (C:\Users\Purboday Ghosh\node_modules\q\q.js:883:30)
+    at Promise.promise.promiseDispatch (C:\Users\Purboday Ghosh\node_modules\q\q.js:816:13)
+    at C:\Users\Purboday Ghosh\node_modules\q\q.js:570:49
+    at runSingle (C:\Users\Purboday Ghosh\node_modules\q\q.js:137:13)
+    at flush (C:\Users\Purboday Ghosh\node_modules\q\q.js:125:13)
+    at _combinedTickCallback (internal/process/next_tick.js:73:7)
+    at process._tickCallback (internal/process/next_tick.js:104:9)
+2017-11-09T00:39:40.442Z - error: [gme:server:worker:simpleworker:pid_440:WorkerFunctions] importSelectionFromFile failed with error CoreIllegalOperationError: Cannot find necessary base [State : 3037e0e0-9034-2aed-a0c7-12d95f9032fb]
+    at CoreIllegalOperationError.Error (native)
+    at new CoreIllegalOperationError (C:\Users\Purboday Ghosh\node_modules\webgme-engine\src\common\core\CoreIllegalOperationError.js:17:27)
+    at checkClosure (C:\Users\Purboday Ghosh\node_modules\webgme-engine\src\common\core\librarycore.js:380:35)
+    at Object.LibraryCore.importClosure (C:\Users\Purboday Ghosh\node_modules\webgme-engine\src\common\core\librarycore.js:1199:31)
+    at CoreQ.Core.importClosure (C:\Users\Purboday Ghosh\node_modules\webgme-engine\src\common\core\core.js:3875:25)
+    at C:\Users\Purboday Ghosh\node_modules\webgme-engine\src\server\worker\workerrequests.js:998:44
+    at _fulfilled (C:\Users\Purboday Ghosh\node_modules\q\q.js:854:54)
+    at self.promiseDispatch.done (C:\Users\Purboday Ghosh\node_modules\q\q.js:883:30)
+    at Promise.promise.promiseDispatch (C:\Users\Purboday Ghosh\node_modules\q\q.js:816:13)
+    at C:\Users\Purboday Ghosh\node_modules\q\q.js:570:49
+2017-11-09T00:39:49.928Z - error: [gme:server:worker:simpleworker:pid_440:WorkerFunctions] importSelectionFromFile failed with error CoreIllegalOperationError: Cannot find necessary base [State : 3037e0e0-9034-2aed-a0c7-12d95f9032fb]
+    at CoreIllegalOperationError.Error (native)
+    at new CoreIllegalOperationError (C:\Users\Purboday Ghosh\node_modules\webgme-engine\src\common\core\CoreIllegalOperationError.js:17:27)
+    at checkClosure (C:\Users\Purboday Ghosh\node_modules\webgme-engine\src\common\core\librarycore.js:380:35)
+    at Object.LibraryCore.importClosure (C:\Users\Purboday Ghosh\node_modules\webgme-engine\src\common\core\librarycore.js:1199:31)
+    at CoreQ.Core.importClosure (C:\Users\Purboday Ghosh\node_modules\webgme-engine\src\common\core\core.js:3875:25)
+    at C:\Users\Purboday Ghosh\node_modules\webgme-engine\src\server\worker\workerrequests.js:998:44
+    at _fulfilled (C:\Users\Purboday Ghosh\node_modules\q\q.js:854:54)
+    at self.promiseDispatch.done (C:\Users\Purboday Ghosh\node_modules\q\q.js:883:30)
+    at Promise.promise.promiseDispatch (C:\Users\Purboday Ghosh\node_modules\q\q.js:816:13)
+    at C:\Users\Purboday Ghosh\node_modules\q\q.js:570:49
+2017-11-09T00:39:51.492Z - error: [gme:server:worker:simpleworker:pid_440:WorkerFunctions] importSelectionFromFile failed with error CoreIllegalOperationError: Cannot find necessary base [State : 3037e0e0-9034-2aed-a0c7-12d95f9032fb]
+    at CoreIllegalOperationError.Error (native)
+    at new CoreIllegalOperationError (C:\Users\Purboday Ghosh\node_modules\webgme-engine\src\common\core\CoreIllegalOperationError.js:17:27)
+    at checkClosure (C:\Users\Purboday Ghosh\node_modules\webgme-engine\src\common\core\librarycore.js:380:35)
+    at Object.LibraryCore.importClosure (C:\Users\Purboday Ghosh\node_modules\webgme-engine\src\common\core\librarycore.js:1199:31)
+    at CoreQ.Core.importClosure (C:\Users\Purboday Ghosh\node_modules\webgme-engine\src\common\core\core.js:3875:25)
+    at C:\Users\Purboday Ghosh\node_modules\webgme-engine\src\server\worker\workerrequests.js:998:44
+    at _fulfilled (C:\Users\Purboday Ghosh\node_modules\q\q.js:854:54)
+    at self.promiseDispatch.done (C:\Users\Purboday Ghosh\node_modules\q\q.js:883:30)
+    at Promise.promise.promiseDispatch (C:\Users\Purboday Ghosh\node_modules\q\q.js:816:13)
+    at C:\Users\Purboday Ghosh\node_modules\q\q.js:570:49
+2017-11-09T00:41:20.570Z - error: [gme:server:worker:simpleworker:pid_440:WorkerFunctions] importSelectionFromFile failed with error CoreIllegalOperationError: Cannot find necessary base [State : 3037e0e0-9034-2aed-a0c7-12d95f9032fb]
+    at CoreIllegalOperationError.Error (native)
+    at new CoreIllegalOperationError (C:\Users\Purboday Ghosh\node_modules\webgme-engine\src\common\core\CoreIllegalOperationError.js:17:27)
+    at checkClosure (C:\Users\Purboday Ghosh\node_modules\webgme-engine\src\common\core\librarycore.js:380:35)
+    at Object.LibraryCore.importClosure (C:\Users\Purboday Ghosh\node_modules\webgme-engine\src\common\core\librarycore.js:1199:31)
+    at CoreQ.Core.importClosure (C:\Users\Purboday Ghosh\node_modules\webgme-engine\src\common\core\core.js:3875:25)
+    at C:\Users\Purboday Ghosh\node_modules\webgme-engine\src\server\worker\workerrequests.js:998:44
+    at _fulfilled (C:\Users\Purboday Ghosh\node_modules\q\q.js:854:54)
+    at self.promiseDispatch.done (C:\Users\Purboday Ghosh\node_modules\q\q.js:883:30)
+    at Promise.promise.promiseDispatch (C:\Users\Purboday Ghosh\node_modules\q\q.js:816:13)
+    at C:\Users\Purboday Ghosh\node_modules\q\q.js:570:49
+2017-11-09T00:41:29.646Z - error: [gme:server:worker:simpleworker:pid_440:WorkerFunctions] importSelectionFromFile failed with error CoreIllegalOperationError: Cannot find necessary base [State : 3037e0e0-9034-2aed-a0c7-12d95f9032fb]
+    at CoreIllegalOperationError.Error (native)
+    at new CoreIllegalOperationError (C:\Users\Purboday Ghosh\node_modules\webgme-engine\src\common\core\CoreIllegalOperationError.js:17:27)
+    at checkClosure (C:\Users\Purboday Ghosh\node_modules\webgme-engine\src\common\core\librarycore.js:380:35)
+    at Object.LibraryCore.importClosure (C:\Users\Purboday Ghosh\node_modules\webgme-engine\src\common\core\librarycore.js:1199:31)
+    at CoreQ.Core.importClosure (C:\Users\Purboday Ghosh\node_modules\webgme-engine\src\common\core\core.js:3875:25)
+    at C:\Users\Purboday Ghosh\node_modules\webgme-engine\src\server\worker\workerrequests.js:998:44
+    at _fulfilled (C:\Users\Purboday Ghosh\node_modules\q\q.js:854:54)
+    at self.promiseDispatch.done (C:\Users\Purboday Ghosh\node_modules\q\q.js:883:30)
+    at Promise.promise.promiseDispatch (C:\Users\Purboday Ghosh\node_modules\q\q.js:816:13)
+    at C:\Users\Purboday Ghosh\node_modules\q\q.js:570:49
+2017-11-09T00:46:15.506Z - error: [gme:server:worker:simpleworker:pid_440:WorkerFunctions] importSelectionFromFile failed with error CoreIllegalOperationError: Cannot find necessary base [State : 3037e0e0-9034-2aed-a0c7-12d95f9032fb]
+    at CoreIllegalOperationError.Error (native)
+    at new CoreIllegalOperationError (C:\Users\Purboday Ghosh\node_modules\webgme-engine\src\common\core\CoreIllegalOperationError.js:17:27)
+    at checkClosure (C:\Users\Purboday Ghosh\node_modules\webgme-engine\src\common\core\librarycore.js:380:35)
+    at Object.LibraryCore.importClosure (C:\Users\Purboday Ghosh\node_modules\webgme-engine\src\common\core\librarycore.js:1199:31)
+    at CoreQ.Core.importClosure (C:\Users\Purboday Ghosh\node_modules\webgme-engine\src\common\core\core.js:3875:25)
+    at C:\Users\Purboday Ghosh\node_modules\webgme-engine\src\server\worker\workerrequests.js:998:44
+    at _fulfilled (C:\Users\Purboday Ghosh\node_modules\q\q.js:854:54)
+    at self.promiseDispatch.done (C:\Users\Purboday Ghosh\node_modules\q\q.js:883:30)
+    at Promise.promise.promiseDispatch (C:\Users\Purboday Ghosh\node_modules\q\q.js:816:13)
+    at C:\Users\Purboday Ghosh\node_modules\q\q.js:570:49
