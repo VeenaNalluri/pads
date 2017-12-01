@@ -94,8 +94,8 @@ define([
       
      // save the values in target 
       
-      target.src = core.getAttribute(srcNode, 'name');
-      target.dst = core.getAttribute(dstNode, 'name');
+      target.src = core.getRelid(srcNode);
+      target.dst = core.getRelid(dstNode);
 	  }
     
     // Get the children paths of the current node
@@ -120,16 +120,33 @@ define([
       arrayJson.push(metainfo);
     }*/
      //logger.debug('Paths', childrenpaths2);
-    target.children = {};
+    if(target.MetaType == 'Guard'){
+      target.src = '';
+      target.dst = '';
+    }
+    
+    if(target.MetaType == 'State' || target.MetaType == 'Default_State' || target.MetaType == 'Final_State'){
+    target.link = {};
     
     // save the children data recursively
     
   for (let i = 0; i < childrenpaths2.length; i += 1) {
       var  childnode2 = nodes[childrenpaths2[i]];
       //logger.debug("Child:",core.getAttribute(childnode2,"name"));
-    target.children[core.getRelid(childnode2)]= self.generatetree(nodes,childnode2);
-    }
+    target.link[core.getRelid(childnode2)]= self.generatetree(nodes,childnode2);
+    }}
+    if(target.MetaType == 'Guard'){
+    target.timer = {};
+    
+    // save the children data recursively
+    
+  for (let i = 0; i < childrenpaths2.length; i += 1) {
+      childnode2 = nodes[childrenpaths2[i]];
+      //logger.debug("Child:",core.getAttribute(childnode2,"name"));
+    target.timer[core.getRelid(childnode2)]= self.generatetree(nodes,childnode2);
+    }}
     return target;
+
   };
   
 	 
@@ -150,11 +167,20 @@ define([
      activeNode = this.activeNode,
       core = this.core,
       logger = this.logger,
-      modelJson = {
+     modelJson = {
         name: '',
+		MetaType: '',
         children: {},
       };
 //var arrayJson = [];
+
+ var FSMData = {
+       name: '',
+       InitialState: '',
+       Intermediate_States: [],
+       FinalState: '',
+       Guards: [],
+    };
   
   // Retrieve an object with all nodes in the subtree of activeNode
   
@@ -164,7 +190,7 @@ define([
        //logger.debug(core.getAttribute(nodes[path], 'name'));
       }*/
 
-      modelJson.name = core.getAttribute(activeNode, 'name');
+      FSMData.name = core.getAttribute(activeNode, 'name');
       
       // Get all the children paths of the active node
       //    (these are the immediated children)
@@ -187,17 +213,65 @@ define([
          modelJson.children[core.getRelid(childNode)] =  self.generatetree(nodes, childNode);
         }
       }
+	  
+	  for(var object in modelJson.children){
+     if(modelJson.children[object].MetaType == 'State'){
+        //logger.debug('here');
+        //logger.debug(JSON.stringify(modelJson.children[object]));
+        FSMData.Intermediate_States.push(modelJson.children[object]);
+     }
+      if(modelJson.children[object].MetaType == 'Default_State'){
+        //logger.debug('here');
+        //logger.debug(JSON.stringify(modelJson.children[object]));
+        FSMData.InitialState= modelJson.children[object];
+     } 
+      
+       if(modelJson.children[object].MetaType == 'Final_State'){
+        //logger.debug('here');
+        //logger.debug(JSON.stringify(modelJson.children[object]));
+        FSMData.FinalState = modelJson.children[object];
+     }
+      
+     if(modelJson.children[object].MetaType == 'Transition'){
+		 //var id = modelJson.children[object].dst;
+       if(modelJson.children[modelJson.children[object].dst].MetaType == 'Guard'){
+        modelJson.children[modelJson.children[object].dst].src = modelJson.children[modelJson.children[object].src].name;
+        //logger.debug('here');
+        //logger.debug(JSON.stringify(modelJson.children[object]));
+       } 
+       if(modelJson.children[modelJson.children[object].src].MetaType == 'Guard'){
+         modelJson.children[modelJson.children[object].src].dst = modelJson.children[modelJson.children[object].dst].name;
+        //logger.debug('here');
+        //logger.debug(JSON.stringify(modelJson.children[object]));
+       } 
+     }  
+    }
+    for(object in modelJson.children){
+     if(modelJson.children[object].MetaType == 'Guard'){
+        //logger.debug('here');
+        //logger.debug(JSON.stringify(modelJson.children[object]));
+        FSMData.Guards.push(modelJson.children[object]);
+     }
+    }
+    
+    logger.debug('FSMData:');
+    logger.debug(JSON.stringify(FSMData, null, 2));
+    
+    
+  
+    
+    
 
       // Convert the data-structure into a string
     
-     logger.debug('modelJson',JSON.stringify(modelJson, null, 2));
-    var tree = JSON.stringify(modelJson, null, 2);
+     //logger.debug('modelJson',JSON.stringify(modelJson, null, 2));
+    var FSM = JSON.stringify(FSMData, null, 2);
      //logger.debug(JSON.stringify(arrayJson, null, 2));
     //var meta = JSON.stringify(arrayJson, null, 2);
     
     // Save both files in the Blob
     
-    return self.blobClient.putFile('tree.json', tree);
+    return self.blobClient.putFile('FSM.json', FSM);
   })
    .then(function (metadataHash) {
     logger.info(metadataHash);
