@@ -126,14 +126,14 @@ define([
     }
     
     if(target.MetaType == 'State' || target.MetaType == 'Default_State' || target.MetaType == 'Final_State'){
-    target.link = {};
+    target.link = [];
     
     // save the children data recursively
     
   for (let i = 0; i < childrenpaths2.length; i += 1) {
       var  childnode2 = nodes[childrenpaths2[i]];
       //logger.debug("Child:",core.getAttribute(childnode2,"name"));
-    target.link = self.generatetree(nodes,childnode2);
+    target.link.push(self.generatetree(nodes,childnode2));
     }}
     if(target.MetaType == 'Guard'){
     target.timer = {};
