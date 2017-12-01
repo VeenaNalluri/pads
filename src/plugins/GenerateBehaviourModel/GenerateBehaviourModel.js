@@ -133,7 +133,7 @@ define([
   for (let i = 0; i < childrenpaths2.length; i += 1) {
       var  childnode2 = nodes[childrenpaths2[i]];
       //logger.debug("Child:",core.getAttribute(childnode2,"name"));
-    target.link[core.getRelid(childnode2)]= self.generatetree(nodes,childnode2);
+    target.link = self.generatetree(nodes,childnode2);
     }}
     if(target.MetaType == 'Guard'){
     target.timer = {};
@@ -143,7 +143,7 @@ define([
   for (let i = 0; i < childrenpaths2.length; i += 1) {
       childnode2 = nodes[childrenpaths2[i]];
       //logger.debug("Child:",core.getAttribute(childnode2,"name"));
-    target.timer[core.getRelid(childnode2)]= self.generatetree(nodes,childnode2);
+    target.timer = self.generatetree(nodes,childnode2);
     }}
     return target;
 
